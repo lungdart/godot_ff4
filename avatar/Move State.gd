@@ -1,43 +1,37 @@
 extends "State.gd"
 
-export var speed = 2.0
+export var speed = 2
 export var tile_size = 16
-var direction
-var start_position
-var completion
+var distance = 0.0
+var direction = Vector2.ZERO
 
 onready var animation_player = $"../../AnimationPlayer"
 
 func enter():
-	start_position = owner.position
-	completion = 0.0
+	distance = 0.0
 	direction = _get_direction()
 
-	
 func exit():
 	direction = Vector2.ZERO
-	completion = 0.0
-	
+
 func update(delta):
-	# Increment step into next tile
-	completion += speed * delta
-	if completion < 1.0:
-		owner.position = start_position + (direction * tile_size * completion)
-		return
-		
-	# Step into next tile is completed
-	completion = 1.0
-	owner.position = start_position + (direction * tile_size)
+	# Increment step into next tile, ensuring to clamp step size to prevent overshoot
+	var step_size = speed * delta
+	distance += step_size
+	if distance >= 1.0:
+		step_size -= distance - 1.0
+		distance = 1.0
+
+	# Apply the appropriate force vector and let the engine handle collisions
+	var velocity = step_size * tile_size * direction
+	owner.move_and_collide(velocity)
 	
-	# Finish moving if there are no more movement actions being given
-	direction = _get_direction()
-	if direction == Vector2.ZERO:
-		emit_signal("finished", "Idle")
-		return
-		
-	# Otherwise, start moving again!
-	start_position = owner.position
-	completion = 0.0
+	# Movement finished. Keep moving if input exists, otherwise go back to Idle
+	if distance >= 1.0:
+		distance = 0.0
+		direction = _get_direction()
+		if direction == Vector2.ZERO:
+			emit_signal("finished", "Idle")
 	
 func _get_direction():
 	if Input.is_action_pressed("move_up"):

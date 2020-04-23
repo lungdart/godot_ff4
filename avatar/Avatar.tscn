@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Move Left"
 length = 0.6
 loop = true
@@ -43,7 +43,7 @@ tracks/0/keys = {
 "values": [ 8, 9 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Move Right"
 length = 0.6
 loop = true
@@ -60,8 +60,7 @@ tracks/0/keys = {
 "values": [ 2, 3 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Move Up"
+[sub_resource type="Animation" id=5]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -79,7 +78,7 @@ tracks/0/keys = {
 
 [node name="Avatar" type="KinematicBody2D"]
 input_pickable = true
-collision_mask = 448
+collision_mask = 480
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -95,9 +94,9 @@ frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Move Down" = SubResource( 2 )
-"anims/Move Left" = SubResource( 4 )
-"anims/Move Right" = SubResource( 5 )
-"anims/Move Up" = SubResource( 3 )
+"anims/Move Left" = SubResource( 3 )
+"anims/Move Right" = SubResource( 4 )
+"anims/Move Up" = SubResource( 5 )
 
 [node name="State Machine" type="Node" parent="."]
 script = ExtResource( 1 )
@@ -108,4 +107,4 @@ script = ExtResource( 4 )
 
 [node name="Move" type="Node" parent="State Machine"]
 script = ExtResource( 5 )
-speed = 2.5
+speed = 3
