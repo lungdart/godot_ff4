@@ -1,0 +1,257 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/ff4_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/party_menu/Party Member.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/cecil1_profile.png" type="Texture" id=3]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 256.0
+margin_bottom = 224.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Party" type="VBoxContainer" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 248.0
+margin_bottom = 216.0
+custom_constants/separation = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Member1" parent="Party" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 240.0
+margin_bottom = 0.0
+texture = ExtResource( 3 )
+character_name = "Cecil"
+character_class = "D.Knight"
+level = 99
+max_hp = 9999
+current_hp = 9999
+max_mp = 999
+current_mp = 999
+
+[node name="Member2" parent="Party" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 40.0
+margin_right = 240.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+character_name = "Cecil"
+character_class = "D.Knight"
+level = 99
+max_hp = 9999
+current_hp = 9999
+max_mp = 999
+current_mp = 999
+in_back = true
+
+[node name="Member3" parent="Party" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 80.0
+margin_right = 240.0
+margin_bottom = 80.0
+texture = ExtResource( 3 )
+character_name = "Cecil"
+character_class = "D.Knight"
+level = 99
+max_hp = 9999
+current_hp = 9999
+max_mp = 999
+current_mp = 999
+
+[node name="Member4" parent="Party" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 120.0
+margin_right = 240.0
+margin_bottom = 120.0
+texture = ExtResource( 3 )
+character_name = "Cecil"
+character_class = "D.Knight"
+level = 99
+max_hp = 9999
+current_hp = 9999
+max_mp = 999
+current_mp = 999
+in_back = true
+
+[node name="Member5" parent="Party" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 160.0
+margin_right = 240.0
+margin_bottom = 160.0
+texture = ExtResource( 3 )
+character_name = "Cecil"
+character_class = "D.Knight"
+level = 99
+max_hp = 9999
+current_hp = 9999
+max_mp = 999
+current_mp = 999
+
+[node name="Selection" type="Control" parent="."]
+margin_left = 176.0
+margin_right = 256.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Selection"]
+margin_right = 80.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 80, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="List" type="VBoxContainer" parent="Selection"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 68.0
+margin_bottom = 130.0
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="Label" parent="Selection/List"]
+margin_right = 56.0
+margin_bottom = 13.0
+text = "Item
+"
+
+[node name="Magic" type="Label" parent="Selection/List"]
+margin_top = 15.0
+margin_right = 56.0
+margin_bottom = 28.0
+text = "Magic
+"
+
+[node name="Equip" type="Label" parent="Selection/List"]
+margin_top = 30.0
+margin_right = 56.0
+margin_bottom = 43.0
+text = "Equip
+"
+
+[node name="Status" type="Label" parent="Selection/List"]
+margin_top = 45.0
+margin_right = 56.0
+margin_bottom = 58.0
+text = "Status
+"
+
+[node name="Form" type="Label" parent="Selection/List"]
+margin_top = 60.0
+margin_right = 56.0
+margin_bottom = 73.0
+text = "Form
+"
+
+[node name="Change" type="Label" parent="Selection/List"]
+margin_top = 75.0
+margin_right = 56.0
+margin_bottom = 88.0
+text = "Change
+"
+
+[node name="Custom" type="Label" parent="Selection/List"]
+margin_top = 90.0
+margin_right = 56.0
+margin_bottom = 103.0
+text = "Custom
+"
+
+[node name="Save" type="Label" parent="Selection/List"]
+margin_top = 105.0
+margin_right = 56.0
+margin_bottom = 118.0
+text = "Save
+"
+
+[node name="Time" type="Control" parent="."]
+margin_left = 176.0
+margin_top = 144.0
+margin_right = 256.0
+margin_bottom = 176.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Time"]
+margin_right = 80.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Time"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 48.0
+margin_bottom = 13.0
+text = "Time"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="Time"]
+margin_left = 16.0
+margin_top = 12.0
+margin_right = 64.0
+margin_bottom = 21.0
+text = "99:99"
+
+[node name="GP" type="Control" parent="."]
+margin_left = 164.0
+margin_top = 176.0
+margin_right = 256.0
+margin_bottom = 224.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="GP"]
+margin_right = 92.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GP"]
+margin_left = 62.0
+margin_top = 24.0
+margin_right = 86.0
+margin_bottom = 37.0
+text = "GP
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="GP"]
+margin_left = 6.0
+margin_top = 6.0
+margin_right = 86.0
+margin_bottom = 15.0
+text = "999999999"
+__meta__ = {
+"_edit_use_anchors_": false
+}

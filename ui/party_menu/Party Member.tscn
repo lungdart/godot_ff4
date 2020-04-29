@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/ff4_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/cecil1_profile.png" type="Texture" id=2]
+[ext_resource path="res://ui/party_menu/Party Member.gd" type="Script" id=3]
+
+[node name="Party Member" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -101.0
+margin_bottom = -192.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Profile" type="TextureRect" parent="."]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="."]
+margin_left = 40.0
+margin_top = -4.0
+margin_right = 160.0
+margin_bottom = 5.0
+text = "Cecil D.Knight"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 4.0
+margin_right = 128.0
+margin_bottom = 26.0
+text = "Level     99"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HP" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 12.0
+margin_right = 160.0
+margin_bottom = 34.0
+text = "HP 9999/9999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MP" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 20.0
+margin_right = 144.0
+margin_bottom = 42.0
+text = "MP   999/999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
